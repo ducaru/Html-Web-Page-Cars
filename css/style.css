@@ -7,13 +7,48 @@
     z-index: 99999;
     height: 100%;
     width: 100%;
+    overflow: auto;
 }
-.modalconent {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
     width: 80%;
-    padding: 20px;
+}
+.modal-content > *
+{
+    padding: 5px;
+}
+.modal-content .header {
+    background-color: #61b3ff;
+}
+.modal-content .header h1 {
+    margin: 0;
+}
+.modal-content .header h1 span{
+    font-size: 18px;
+    color: #303030;
+    font-style: italic;
+    font-weight: normal;
+}
+.modal-content .header p {
+    margin: 0;
+    text-transform: uppercase;
+    color:#ffffff;
+}
+.modal-content .body {
+    min-height: 20px;
+}
+
+.modal-content .footer{
+    background-color: #61b3ff;
+    clear: both;
+}
+.section {
+    float: left;
+    width: 50%;
+}
+
+.carInfo {
+    width: auto;
+    margin-right: 5px;
 }

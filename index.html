@@ -1,26 +1,85 @@
- <!Doctype html>
+<!Doctype html>
 <html>
 
 <head>
-     <title>Optymyze Project</title>
-	 <link href="css/style.css" rel="stylesheet">
+    <title>Optymyze Project</title>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <div id="modal">
-        <div class="modalconent">
-             <h1></h1>
-    
-            <p>fasfsdfasfsfsdfsdfsdsffsd</p>
-            <button id="button">Close</button>
+        <div class="modal-content">
+            <div class="header">
+                <h1>Add Product
+                    <span>Second-Hand Car</span>
+                </h1>
+                <p>Automobiles</p>
+            </div>
+            <div class="body">
+
+                <div class="section">
+                    <form action="/action_page.php">
+                        <div class="section carInfo">
+                            <p>
+                                Title of announcement:
+                            </p>
+                            <p>
+                                Make/Brand:
+                            </p>
+                            <p>
+                                Manufacturing Year:
+                            </p>
+                            <p>
+
+                                Mileage:
+                            </p>
+                            <p>
+                                Fuel Type:
+                            </p>
+                            <p>
+                                Color:
+                            </p>
+                        </div>
+                        <div class="section">
+                            <p>
+                                <input id="titleInput" type="text">
+                            </p>
+                            <p>
+                                <input id="brandInput" type="text">
+                            </p>
+                            <p>
+                                <input id="yearInput" type="text">
+                            </p>
+                            <p>
+                                <input id="mileageInput" type="text" onkeypress="validate(event)">
+                            </p>
+                            <p>
+                                <select id="fuelInput">
+                                    <option value="gasoline">Gasoline</option>
+                                    <option value="diesel">Diesel</option>
+                                    <option value="hybrid">Hybrid</option>
+                                    <option value="electric">Electric</option>
+                                </select>
+                            </p>
+                            <p>
+                                <input id="colorInput" type="text">
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    Content in column B
+                </div>
+            </div>
+            <div class="footer">
+                <div class="actions">
+                    <button id="button">Close</button>
+                </div>
+            </div>
         </div>
     </div>
+
 </body>
 <script src="controller/script.js"></script>
-<footer>
-    <div>
-        
-    </div>
-</footer>
 
 </html>
