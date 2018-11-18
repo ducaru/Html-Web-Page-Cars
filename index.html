@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <div id="modal">
+    <div id="modalWindow">
         <div class="modal-content">
             <div class="header">
                 <h1>Add Product
@@ -16,70 +16,174 @@
                 <p>Automobiles</p>
             </div>
             <div class="body">
-
-                <div class="section">
-                    <form action="/action_page.php">
-                        <div class="section carInfo">
-                            <p>
+                <form action="/action_page.php">
+                    <div class="section">
+                        <p>
+                            <label for="titleInput">
                                 Title of announcement:
-                            </p>
-                            <p>
+                            </label>
+                            <input class="inputBox" id="titleInput" type="text">
+                        </p>
+                        <p>
+                            <label for="brandInput">
                                 Make/Brand:
-                            </p>
-                            <p>
+                            </label>
+                            <input class="inputBox" id="brandInput" type="text">
+                        </p>
+                        <p>
+                            <label for="yearInput">
                                 Manufacturing Year:
-                            </p>
-                            <p>
-
+                            </label>
+                            <input class="inputBox" id="yearInput" type="text">
+                        </p>
+                        <p>
+                            <label for="mileageInput">
                                 Mileage:
-                            </p>
-                            <p>
+                            </label>
+                            <input class="inputBox" id="mileageInput" type="text" onkeypress="validate(event)">
+                        </p>
+                        <p>
+                            <label for="fuelInput">
                                 Fuel Type:
-                            </p>
-                            <p>
+                            </label>
+                            <select class="inputBox" id="fuelInput">
+                                <option value="gasoline">Gasoline</option>
+                                <option value="diesel">Diesel</option>
+                                <option value="hybrid">Hybrid</option>
+                                <option value="electric">Electric</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="colorInput">
                                 Color:
-                            </p>
+                            </label>
+                            <input class="inputBox" id="colorInput" type="text">
+                        </p>                        
+                        <div id="colorSquare" class="square"></div>
+                    </div>
+                    <div class="section">
+                        <p>
+                            <label for="damageInput">
+                                Vehicle damaged:
+                            </label>
+                            <span class="inputBox">
+                                <input type="radio" name="yesNo" id="yesCheck" onclick="yesNoCheck()">Yes
+                                <input type="radio" name="yesNo" onclick="yesNoCheck()">No
+                            </span>
+                        </p>
+                        <div id="damageDetails">
+                            <label for="damageDetailsInput">
+                                Damage details:
+                            </label>
+                            <input class="inputBox" type="text">
                         </div>
-                        <div class="section">
-                            <p>
-                                <input id="titleInput" type="text">
-                            </p>
-                            <p>
-                                <input id="brandInput" type="text">
-                            </p>
-                            <p>
-                                <input id="yearInput" type="text">
-                            </p>
-                            <p>
-                                <input id="mileageInput" type="text" onkeypress="validate(event)">
-                            </p>
-                            <p>
-                                <select id="fuelInput">
-                                    <option value="gasoline">Gasoline</option>
-                                    <option value="diesel">Diesel</option>
-                                    <option value="hybrid">Hybrid</option>
-                                    <option value="electric">Electric</option>
-                                </select>
-                            </p>
-                            <p>
-                                <input id="colorInput" type="text">
-                            </p>
-                        </div>
-                    </form>
-                </div>
-                <div>
-                    Content in column B
-                </div>
+                        <p>
+                            <label for="priceInput">
+                                Price:
+                            </label>
+                            <input class="inputBox" id="priceInput" type="text">
+                        </p>
+                        <p>
+                            <label for="currencyInput">
+                                Currency:
+                            </label>
+                            <select class="inputBox" id="currencyInput">
+                                <option value="USD" selected="selected">United States Dollars</option>
+                                <option value="EUR">Euro</option>
+                                <option value="GBP">United Kingdom Pounds</option>
+                                <option value="DZD">Algeria Dinars</option>
+                                <option value="ARP">Argentina Pesos</option>
+                                <option value="AUD">Australia Dollars</option>
+                                <option value="ATS">Austria Schillings</option>
+                                <option value="BSD">Bahamas Dollars</option>
+                                <option value="BBD">Barbados Dollars</option>
+                                <option value="BEF">Belgium Francs</option>
+                                <option value="BMD">Bermuda Dollars</option>
+                                <option value="BRR">Brazil Real</option>
+                                <option value="BGL">Bulgaria Lev</option>
+                                <option value="CAD">Canada Dollars</option>
+                                <option value="CLP">Chile Pesos</option>
+                                <option value="CNY">China Yuan Renmimbi</option>
+                                <option value="CYP">Cyprus Pounds</option>
+                                <option value="CSK">Czech Republic Koruna</option>
+                                <option value="DKK">Denmark Kroner</option>
+                                <option value="NLG">Dutch Guilders</option>
+                                <option value="XCD">Eastern Caribbean Dollars</option>
+                                <option value="EGP">Egypt Pounds</option>
+                                <option value="FJD">Fiji Dollars</option>
+                                <option value="FIM">Finland Markka</option>
+                                <option value="FRF">France Francs</option>
+                                <option value="DEM">Germany Deutsche Marks</option>
+                                <option value="XAU">Gold Ounces</option>
+                                <option value="GRD">Greece Drachmas</option>
+                                <option value="HKD">Hong Kong Dollars</option>
+                                <option value="HUF">Hungary Forint</option>
+                                <option value="ISK">Iceland Krona</option>
+                                <option value="INR">India Rupees</option>
+                                <option value="IDR">Indonesia Rupiah</option>
+                                <option value="IEP">Ireland Punt</option>
+                                <option value="ILS">Israel New Shekels</option>
+                                <option value="ITL">Italy Lira</option>
+                                <option value="JMD">Jamaica Dollars</option>
+                                <option value="JPY">Japan Yen</option>
+                                <option value="JOD">Jordan Dinar</option>
+                                <option value="KRW">Korea (South) Won</option>
+                                <option value="LBP">Lebanon Pounds</option>
+                                <option value="LUF">Luxembourg Francs</option>
+                                <option value="MYR">Malaysia Ringgit</option>
+                                <option value="MXP">Mexico Pesos</option>
+                                <option value="NLG">Netherlands Guilders</option>
+                                <option value="NZD">New Zealand Dollars</option>
+                                <option value="NOK">Norway Kroner</option>
+                                <option value="PKR">Pakistan Rupees</option>
+                                <option value="XPD">Palladium Ounces</option>
+                                <option value="PHP">Philippines Pesos</option>
+                                <option value="XPT">Platinum Ounces</option>
+                                <option value="PLZ">Poland Zloty</option>
+                                <option value="PTE">Portugal Escudo</option>
+                                <option value="ROL">Romania Leu</option>
+                                <option value="RUR">Russia Rubles</option>
+                                <option value="SAR">Saudi Arabia Riyal</option>
+                                <option value="XAG">Silver Ounces</option>
+                                <option value="SGD">Singapore Dollars</option>
+                                <option value="SKK">Slovakia Koruna</option>
+                                <option value="ZAR">South Africa Rand</option>
+                                <option value="KRW">South Korea Won</option>
+                                <option value="ESP">Spain Pesetas</option>
+                                <option value="XDR">Special Drawing Right (IMF)</option>
+                                <option value="SDD">Sudan Dinar</option>
+                                <option value="SEK">Sweden Krona</option>
+                                <option value="CHF">Switzerland Francs</option>
+                                <option value="TWD">Taiwan Dollars</option>
+                                <option value="THB">Thailand Baht</option>
+                                <option value="TTD">Trinidad and Tobago Dollars</option>
+                                <option value="TRL">Turkey Lira</option>
+                                <option value="VEB">Venezuela Bolivar</option>
+                                <option value="ZMK">Zambia Kwacha</option>
+                                <option value="EUR">Euro</option>
+                                <option value="XCD">Eastern Caribbean Dollars</option>
+                                <option value="XDR">Special Drawing Right (IMF)</option>
+                                <option value="XAG">Silver Ounces</option>
+                                <option value="XAU">Gold Ounces</option>
+                                <option value="XPD">Palladium Ounces</option>
+                                <option value="XPT">Platinum Ounces</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="descriptionInput">
+                                Description:
+                            </label>
+                            <textarea id="descriptionInput" class="inputBox" rows="5"></textarea>
+                        </p>
+                    </div>
+                </form>
             </div>
             <div class="footer">
-                <div class="actions">
-                    <button id="button">Close</button>
-                </div>
+                <button class="button buttonSave">Save</button>
+                <button id="cancelButton" class="button buttonCancel">Cancel</button>
             </div>
         </div>
     </div>
-
 </body>
 <script src="controller/script.js"></script>
-
-</html>
+</html> 
