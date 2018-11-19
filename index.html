@@ -16,7 +16,7 @@
                 <p>Automobiles</p>
             </div>
             <div class="body">
-                <form action="/action_page.php">
+                <form id="carForm" action="/action_page.php">
                     <div class="section">
                         <p>
                             <label for="titleInput">
@@ -24,23 +24,35 @@
                             </label>
                             <input class="inputBox" id="titleInput" type="text">
                         </p>
+                        <p id="titleError" class="errorMessage">
+                            Please enter title
+                        </p>
                         <p>
                             <label for="brandInput">
                                 Make/Brand:
                             </label>
                             <input class="inputBox" id="brandInput" type="text">
                         </p>
+                        <p id="brandError" class="errorMessage">
+                            Please enter brand
+                        </p>
                         <p>
                             <label for="yearInput">
                                 Manufacturing Year:
                             </label>
-                            <input class="inputBox" id="yearInput" type="text">
+                            <input class="inputBox" id="yearInput" type="text" onkeyup="validateNumber(event)">
+                        </p>
+                        <p id="yearError" class="errorMessage">
+                            Please enter a valid number
                         </p>
                         <p>
                             <label for="mileageInput">
                                 Mileage:
                             </label>
-                            <input class="inputBox" id="mileageInput" type="text" onkeypress="validate(event)">
+                            <input class="inputBox" id="mileageInput" type="text" onkeyup="validateNumber(event)">
+                            <p id="mileageError" class="errorMessage">
+                                Please enter a valid number
+                            </p>
                         </p>
                         <p>
                             <label for="fuelInput">
@@ -58,8 +70,11 @@
                                 Color:
                             </label>
                             <input class="inputBox" id="colorInput" type="text">
-                        </p>                        
+                        </p>
                         <div id="colorSquare" class="square"></div>
+                        <p id="colorError" class="errorMessage">
+                            Please enter a valid color
+                        </p>
                     </div>
                     <div class="section">
                         <p>
@@ -81,7 +96,10 @@
                             <label for="priceInput">
                                 Price:
                             </label>
-                            <input class="inputBox" id="priceInput" type="text">
+                            <input class="inputBox" id="priceInput" type="text" onkeyup="validateNumber(event)">
+                        </p>
+                        <p id="priceError" class="errorMessage">
+                            Please enter a valid number
                         </p>
                         <p>
                             <label for="currencyInput">
@@ -179,11 +197,12 @@
                 </form>
             </div>
             <div class="footer">
-                <button class="button buttonSave">Save</button>
+                <button class="button buttonSave" onclick="submitForm()">Save</button>
                 <button id="cancelButton" class="button buttonCancel">Cancel</button>
             </div>
         </div>
     </div>
 </body>
 <script src="controller/script.js"></script>
-</html> 
+
+</html>
