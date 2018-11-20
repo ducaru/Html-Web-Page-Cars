@@ -43,6 +43,11 @@
     background-color: #61b3ff;
     clear: both;
 }
+
+form input[type="text"] {
+    text-transform: lowercase;
+}
+
 .section {
     float: left;
     width: 45%;

@@ -6,8 +6,11 @@ window.onload = function () {
     document.getElementById("priceError").style.display = "none";
     document.getElementById("titleError").style.display = "none";
     document.getElementById("brandError").style.display = "none";
+    document.getElementById("brandImage").style.display = "none";
+
     document.getElementById("cancelButton").onclick = function () {
         document.getElementById("modalWindow").style.display = "none"
+
     };
 };
 
@@ -28,6 +31,14 @@ colorInputBox.addEventListener("blur", function () {
         document.getElementById("colorSquare").style.display = "block";
         document.getElementById("colorInput").style.removeProperty('border');
     }
+}, true);
+
+var brandInputBox = document.getElementById("brandInput");
+
+brandInputBox.addEventListener("blur", function () {
+    let logoUrl = "http://www.car-logos.org/wp-content/uploads/2011/09/" + document.getElementById("brandInput").value + ".png";
+    document.getElementById("brandImage").setAttribute("src", logoUrl);
+    document.getElementById("brandImage").style.display = "block";
 }, true);
 
 function validateNumber(event) {
@@ -66,11 +77,10 @@ function submitForm() {
 }
 
 function emptyFieldCheck(inputValue, errorId) {
-    if (inputValue.trim().length === 0){
+    if (inputValue.trim().length === 0) {
         document.getElementById(errorId).style.display = "block";
     }
-    else
-    {
+    else {
         document.getElementById(errorId).style.display = "none";
     }
 }
